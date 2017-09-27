@@ -3,33 +3,35 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_home"
             android:title="Home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_register_service"
+            android:icon="@drawable/ic_menu_add"
+            android:title="Registrar Servicio" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_maps"
+            android:icon="@drawable/ic_menu_maps"
+            android:title="Mapas de Territorio" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_assignments"
+            android:icon="@drawable/ic_menu_assignments"
+            android:title="Asignaciones" />
+        <item
+            android:id="@+id/nav_history_notice"
+            android:icon="@drawable/ic_menu_message_alert"
+            android:title="Historico de Mensajes" />
+
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Iniciar Sesion">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_menu_login"
+                android:title="Login" />
         </menu>
     </item>
 
