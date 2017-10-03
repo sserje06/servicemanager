@@ -26,14 +26,13 @@ public class Recycler extends AppCompatActivity {
                 FirebaseDatabase.getInstance().getReference()
                     .child("tblUser");
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listaUsuarios);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
+        RecyclerView recycler = (RecyclerView) findViewById(R.id.listaUsuarios);
+        recycler.setHasFixedSize(true);
+        recycler.setLayoutManager(new LinearLayoutManager(this));
 
         mAdapter =
                 new FirebaseRecyclerAdapter<Usuarios, UsuariosHolder> (
-                    Usuarios.class, R.layout.usuarios_lista, UsuariosHolder.class, dbUser
-                ){
+                    Usuarios.class, R.layout.usuarios_lista, UsuariosHolder.class, dbUser){
 
                     @Override
                     protected void populateViewHolder(UsuariosHolder viewUsuarioHolder, Usuarios viewUsuarios, int position) {
@@ -43,10 +42,10 @@ public class Recycler extends AppCompatActivity {
                     viewUsuarioHolder.setCedula(viewUsuarios.getCedula());
                     viewUsuarioHolder.setCiudad(viewUsuarios.getCiudad());
                     viewUsuarioHolder.setCorreo(viewUsuarios.getCorreo());
-                    viewUsuarioHolder.setCorreo(viewUsuarios.getTelefono());
+                    viewUsuarioHolder.setTelefono(viewUsuarios.getTelefono());
                     }
                 };
-                recyclerView.setAdapter(mAdapter);
+        recycler.setAdapter(mAdapter);
 
     }
     @Override

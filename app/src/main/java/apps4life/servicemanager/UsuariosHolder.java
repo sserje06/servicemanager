@@ -18,6 +18,7 @@ public class UsuariosHolder extends RecyclerView.ViewHolder {
         mView = itemView;
     }
 
+
     public void setCargo(String cargo){
 
         TextView field = (TextView) mView.findViewById(R.id.lblCargo);
@@ -25,12 +26,12 @@ public class UsuariosHolder extends RecyclerView.ViewHolder {
     }
 
     public void setNombres(String nombres){
-        TextView field = (TextView) mView.findViewById(R.id.lbl_nombres);
+        TextView field = (TextView) mView.findViewById(R.id.lblNombres);
         field.setText(nombres);
     }
 
     public void setApellidos(String apellidos){
-        TextView field = (TextView) mView.findViewById(R.id.lbl_apellidos);
+        TextView field = (TextView) mView.findViewById(R.id.lblApellidos);
         field.setText(apellidos);
     }
 
