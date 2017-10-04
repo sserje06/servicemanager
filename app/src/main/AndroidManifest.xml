@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login" />
-        <activity android:name=".Recycler"></activity>
+        <activity android:name=".AnunciosCongregaciones"></activity>
     </application>
 
 </manifest>
