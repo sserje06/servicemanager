@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-
+ 
         FirebaseRecyclerAdapter<Letters_Model, Letter_Holder> firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Letters_Model, Letter_Holder>(Letters_Model.class,
                         R.layout.design_rowl_letters,

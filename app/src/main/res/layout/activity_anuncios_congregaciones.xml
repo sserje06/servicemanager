@@ -28,14 +28,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvAnuncios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:contextClickable="true"/>
-
-    </LinearLayout>
+           <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvAnuncios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
+   </LinearLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/layout_laut"
@@ -46,6 +44,22 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/lblCartasOrganizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_alignParentTop="true"
+                android:text="Cartas del Cuerpo de Gobernantes"
+                android:textColor="@color/primary_text"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvCartas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
+
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
