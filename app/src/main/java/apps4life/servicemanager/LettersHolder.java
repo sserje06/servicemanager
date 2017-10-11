@@ -18,17 +18,9 @@ public class LettersHolder extends RecyclerView.ViewHolder {
 
     View mView;
 
-    public LettersHolder(View itemView, View mView) {
+    public LettersHolder(View itemView) {
         super(itemView);
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("www.google.com"));
-                Intent browserChooserIntent = Intent.createChooser(browserIntent, "Escoge el navegador");
-                v.getContext().startActivity(browserChooserIntent);
-            }
-        });
+        mView = itemView;
     }
 
     public void setPathName(String pathname) {

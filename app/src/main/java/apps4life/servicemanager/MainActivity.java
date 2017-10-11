@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_register_service) {
 
-            Intent intent = new Intent(MainActivity.this, prueba.class);
+            Intent intent = new Intent(MainActivity.this, Letters.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_maps) {
