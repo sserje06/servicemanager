@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -30,7 +31,7 @@ public class LettersHolder extends RecyclerView.ViewHolder {
 
     public void setPathRoute(Context ctx, String pathrouth) {
         ImageView post_image = (ImageView) mView.findViewById(R.id.image_view_rowl_letters);
-        Picasso.with(ctx).load(pathrouth).into(post_image);
+        Glide.with(ctx).load(pathrouth).into(post_image);
     }
 
 }
