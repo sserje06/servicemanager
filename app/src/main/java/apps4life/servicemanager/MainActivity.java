@@ -36,9 +36,6 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseRecyclerAdapter mAdapter;
-    private RecyclerView lettersView;
-    FirebaseDatabase database;
-    DatabaseReference imagesLettersdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,59 +73,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        //Carga las imagenes de Cartas de la organización
-        lettersView = (RecyclerView)findViewById(R.id.rvCartas);
-        lettersView.setHasFixedSize(true);
-        lettersView.setLayoutManager(new LinearLayoutManager(this));
-
-        database = FirebaseDatabase.getInstance();
-        imagesLettersdb = database.getReference("tblPathUploads");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
- 
-        FirebaseRecyclerAdapter<Letters_Model, Letter_Holder> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<Letters_Model, Letter_Holder>(Letters_Model.class,
-                        R.layout.design_rowl_letters,
-                        Letter_Holder.class,
-                        imagesLettersdb) {
-
-                    @Override
-                    protected void populateViewHolder(Letter_Holder viewHolder, Letters_Model model, int position) {
-                    viewHolder.setPathName(model.getPathname());
-                    viewHolder.setPathRoute(getApplicationContext(), model.getPathroute());
-                    }
-                };
-                lettersView.setAdapter(firebaseRecyclerAdapter);
-    }
-
-    //ViewHolder para las imagenes de Cartas de la Organización
-    public static class Letter_Holder extends RecyclerView.ViewHolder{
-        View mView;
-
-        public Letter_Holder(View itemView) {
-            super(itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("www.google.com"));
-                    Intent browserChooserIntent = Intent.createChooser(browserIntent,"Escoge el navegador");
-                    v.getContext().startActivity(browserChooserIntent);
-                }
-            });
-        }
-            public void setPathName(String title){
-                TextView post_title = (TextView)mView.findViewById(R.id.text_view_rowl_letters);
-                post_title.setText(title);
-            }
-            public void setPathRoute(Context ctx, String image){
-                ImageView post_image = (ImageView)mView.findViewById(R.id.image_view_rowl_letters);
-                Picasso.with(ctx).load(image).into(post_image);
-            }
     }
 
     @Override
@@ -178,6 +122,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_register_service) {
+
+            Intent intent = new Intent(MainActivity.this, prueba.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_maps) {
 
